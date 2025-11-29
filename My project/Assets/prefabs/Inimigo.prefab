@@ -505,8 +505,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.625
+  m_Offset: {x: -5.531986, y: 0}
+  m_Radius: 6.156985
 --- !u!50 &7945124759440643666
 Rigidbody2D:
   serializedVersion: 5

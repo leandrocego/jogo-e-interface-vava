@@ -17,7 +17,12 @@ public class Inimigo : Personagem
     private bool andando = false;
     
     private InimigosAbatidos InimigosAbatidos;
-    
+
+    public Inimigo(InimigosAbatidos inimigosAbatidos)
+    {
+        InimigosAbatidos = inimigosAbatidos;
+    }
+
     public void setDano(int dano)
     {
         this.dano = dano;
@@ -77,7 +82,8 @@ public class Inimigo : Personagem
         }
         
         if (getVida() <= 0)
-        { 
+        {
+            InimigosAbatidos.numerodeInimigos += 1;
             //desativa o objeto do Inimigo
             gameObject.SetActive(false);
           
