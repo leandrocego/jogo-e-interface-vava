@@ -16,7 +16,7 @@ public class Inimigo : Personagem
 
     private bool andando = false;
     
-    private GerenciadorDeVitoria gerenciadorDeVitoria;
+    private InimigosAbatidos InimigosAbatidos;
     
     public void setDano(int dano)
     {
@@ -41,7 +41,7 @@ public class Inimigo : Personagem
         }
 
         //gerenciadorDeVitoria = GameObject.Find("Placar").GetComponent<GerenciadorDeVitoria>();
-        gerenciadorDeVitoria = GameObject.FindWithTag("Placar").GetComponent<GerenciadorDeVitoria>();
+        InimigosAbatidos = GameObject.FindWithTag("Placar").GetComponent<InimigosAbatidos>();
         raioDeVisao = _visaoCollider2D.radius;
         
         audioSource = GetComponent<AudioSource>();
@@ -77,8 +77,7 @@ public class Inimigo : Personagem
         }
         
         if (getVida() <= 0)
-        {
-            gerenciadorDeVitoria.killsAtuais += 1;
+        { 
             //desativa o objeto do Inimigo
             gameObject.SetActive(false);
           
@@ -108,7 +107,7 @@ public class Inimigo : Personagem
             
             setVida(0);
             
-            gerenciadorDeVitoria.killsAtuais += 1;
+            InimigosAbatidos.numerodeInimigos += 1;
             gameObject.SetActive(false);
         }
     }
